@@ -119,7 +119,70 @@
     .carousel-indicators .active {
       opacity: 1;
     }
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between countdown items */
+  margin: 50px 0;
+  font-family: 'Arial', sans-serif; /* You can change this font */
+  text-align: center;
+}
 
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0; /* Light background for each item */
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 90px; /* Ensures consistent width */
+}
+
+.countdown-number {
+  font-size: 3em; /* Large numbers */
+  font-weight: bold;
+  color: #333; /* Darker color for numbers */
+  margin-bottom: 5px;
+}
+
+.countdown-label {
+  font-size: 0.9em;
+  color: #555; /* Slightly lighter color for labels */
+  text-transform: uppercase;
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 768px) {
+  .countdown-container {
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 15px;
+  }
+
+  .countdown-item {
+    padding: 10px 20px;
+    min-width: 80px;
+  }
+
+  .countdown-number {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-item {
+    padding: 8px 15px;
+    min-width: 70px;
+  }
+
+  .countdown-number {
+    font-size: 2em;
+  }
+  .countdown-label {
+    font-size: 0.8em;
+  }
+}
     @media (max-width: 768px) {
       .nav-link {
         padding: 8px 10px;
@@ -268,10 +331,10 @@
         <div class="container text-center">
           <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px;">Our Services</h2>
 
-          <div class="row justify-content-center">
+          <div class="row justify-content-center gap-3">
 
             <!-- Sunday Service -->
-            <div class="col-sm-6 col-md-4 m-3 service-box">
+            <div class="col-3 service-box">
               <img src="images/sunday.png" alt="Sunday Service Icon" class="service-img-icon">
               <h4>Sunday Service</h4>
               <p class="service-time">Every Sunday 5:00 PM</p>
@@ -282,7 +345,7 @@
             </div>
 
             <!-- Hour of Prayer -->
-            <div class="col-sm-6 col-md-4 m-3 service-box">
+            <div class="col-3 service-box">
               <img src="images/prayer.png" alt="Sunday Service Icon" class="service-img-icon">
               <h4>Hour of Prayer</h4>
               <p class="service-time">Every Wednesday 08:00 PM</p>
@@ -292,7 +355,7 @@
             </div>
 
             <!-- Sunday School -->
-            <div class="col-sm-6 col-md-4 m-3 service-box">
+            <div class="col-3 service-box">
               <img src="images/school.png" alt="Sunday Service Icon" class="service-img-icon">
               <h4>Sunday School</h4>
               <p class="service-time">Every Friday 00:00 AM</p>
@@ -337,12 +400,30 @@
       </div>
     </div>
 <!-- Upcoming Events -->
-      <h2 class="mb-5" style="font-weight: bold;">Upcoming Events</h2>
+      <h2 class="mb-2" style="font-weight: bold;">Upcoming Events</h2>
       <div class="row justify-content-center">
+        <h5 class="mt-3 mb-0.5">RETREAT 2025</h5>
+    <div class="countdown-container">
+  <div class="countdown-item">
+    <span id="countdown-days" class="countdown-number">00</span>
+    <span class="countdown-label">Days</span>
+  </div>
+  <div class="countdown-item">
+    <span id="countdown-hours" class="countdown-number">00</span>
+    <span class="countdown-label">Hours</span>
+  </div>
+  <div class="countdown-item">
+    <span id="countdown-minutes" class="countdown-number">00</span>
+    <span class="countdown-label">Minutes</span>
+  </div>
+  <div class="countdown-item">
+    <span id="countdown-seconds" class="countdown-number">00</span>
+    <span class="countdown-label">Seconds</span>
+  </div>
+</div>
 
-    <script src="/scripts//countdown.js"></script>
-    <a href="https://logwork.com/countdown-dha5" class="countdown-timer" data-timezone="America/Toronto"
-      data-date="2025-09-04 16:00">Retreat 2025</a>
+<script src="scripts/countdown.js"></script>
+    
   </section>
 
   <!-- Contact & Location Section -->
