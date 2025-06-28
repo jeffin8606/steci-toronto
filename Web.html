@@ -8,7 +8,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Careera+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Careera+Script&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
 
     <style>
         body,
@@ -231,7 +232,7 @@
             border-radius: 12px;
             transition: all 0.3s ease;
             overflow: hidden;
-            height: 180px;
+            height: 180px; /* Default height */
             position: relative;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -257,7 +258,7 @@
         }
 
         .service-box:hover {
-            height: 260px;
+            height: 260px; /* Expanded height on hover */
         }
 
         .service-box:hover .service-details {
@@ -274,6 +275,44 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Styles for dropdown menu */
+        .dropdown-menu {
+            /* Changed to match top-header-area background color and opacity */
+            background-color: rgba(2, 73, 80, 0.20); 
+            border-radius: 8px;
+            border: none;
+            /* Removed box-shadow to match the navbar */
+            box-shadow: none; 
+            padding: 0; /* Remove default padding */
+        }
+
+        .dropdown-item {
+            color: white !important;
+            padding: 10px 25px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: #affdde; /* Hover background for dropdown items */
+            color: #000 !important; /* Text color on hover */
+        }
+        
+        .dropdown-item:active { /* Optional: style for when item is clicked/active */
+            background-color: #affdde;
+            color: #000 !important;
+        }
+
+        /* CUSTOM CSS FOR HOVER DROPDOWN AND NO CARET */
+        .navbar-nav .dropdown:hover .dropdown-menu {
+            display: block; /* Show dropdown menu on hover */
+        }
+
+        .navbar-nav .dropdown-toggle::after {
+            display: none; /* Hide the caret (arrow) */
+        }
+        /* END CUSTOM CSS */
+
     </style>
 </head>
 
@@ -310,11 +349,23 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav text-center">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Office Bearers 2025.html">Office Bearers 2025</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Retreat 2025</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAbout" role="button"
+                                aria-expanded="false">
+                                ABOUT US
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
+                                <li><a class="dropdown-item" href="steci_toronto.html">STECI TORONTO</a></li>
+                                <li><a class="dropdown-item" href="board_of_directors.html">BOARD OF DIRECTORS</a></li>
+                                <li><a class="dropdown-item" href="parent_church.html">PARENT CHURCH</a></li>
+                                <li><a class="dropdown-item" href="fundamental_teachings.html">FUNDAMENTAL TEACHINGS</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="Office Bearers 2025.html">OFFICE BEARERS 2025</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#events">EVENTS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
                     </ul>
                 </div>
             </div>
@@ -384,7 +435,7 @@
         </section>
 
 
-        <h2 class="mb-5" style="font-weight: bold;">Our Leaders</h2>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px;">Our Leaders</h2>
         <div class="row justify-content-center">
 
             <div class="col-md-4 mb-4">
@@ -410,68 +461,122 @@
 
         </div>
 
-        <h2 class="mb-5" style="font-weight: bold;">Upcoming Events</h2>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px;">Upcoming Events</h2>
         <div class="row justify-content-center">
-            <h5 class="mt-0 mb-3">RETREAT 2025</h5>
-            <div class="countdown-container">
-                <div class="countdown-item">
-                    <span id="countdown-days" class="countdown-number">00</span>
-                    <span class="countdown-label">Days</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="countdown-hours" class="countdown-number">00</span>
-                    <span class="countdown-label">Hours</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="countdown-minutes" class="countdown-number">00</span>
-                    <span class="countdown-label">Minutes</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="countdown-seconds" class="countdown-number">00</span>
-                    <span class="countdown-label">Seconds</span>
+
+            <div class="col-md-6 mb-4 d-flex">
+                <div class="service-box flex-fill" style="height: auto; min-height: 250px; padding: 30px;">
+                    <h5 class="mt-0 mb-4" style="font-weight: bold;"><a href="retreat_2025.html" style="text-decoration: none; color: inherit;">RETREAT 2025</a></h5>
+                    <div class="countdown-container" style="margin: 0; gap: 10px;">
+                        <div class="countdown-item">
+                            <span id="countdown-days" class="countdown-number">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="countdown-hours" class="countdown-number">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="countdown-minutes" class="countdown-number">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="countdown-seconds" class="countdown-number">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const countdownDate = new Date('2025-09-04T16:00:00'); // Retreat Date
+
+                            const daysElement = document.getElementById('countdown-days');
+                            const hoursElement = document.getElementById('countdown-hours');
+                            const minutesElement = document.getElementById('countdown-minutes');
+                            const secondsElement = document.getElementById('countdown-seconds');
+
+                            function updateCountdown() {
+                                const now = new Date().getTime();
+                                const distance = countdownDate.getTime() - now;
+
+                                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                                if (distance < 0) {
+                                    clearInterval(countdownInterval);
+                                    const container = document.querySelector('.countdown-container');
+                                    container.innerHTML = '<p style="font-size: 1.5em; color: #2c3e50; text-align: center; width: 100%;">The event has started!</p>';
+                                    container.style.boxShadow = 'none';
+                                    container.style.backgroundColor = 'transparent';
+                                } else {
+                                    daysElement.innerHTML = String(days).padStart(2, '0');
+                                    hoursElement.innerHTML = String(hours).padStart(2, '0');
+                                    minutesElement.innerHTML = String(minutes).padStart(2, '0');
+                                    secondsElement.innerHTML = String(seconds).padStart(2, '0');
+                                }
+                            }
+                            const countdownInterval = setInterval(updateCountdown, 1000);
+                            updateCountdown();
+                        });
+                    </script>
                 </div>
             </div>
 
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    // Set the date and time you are counting down to.
-                    const countdownDate = new Date('2025-09-04T16:00:00');
+            <div class="col-md-6 mb-4 d-flex">
+                <div class="service-box flex-fill" style="height: auto; min-height: 250px; padding: 30px;">
+                    <h5 class="mt-0 mb-4" style="font-weight: bold;">Events</h5>
+                    <div style="text-align: center;"> 
+                        <p style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; margin-bottom: 15px; background-color: #f9f9f9;">
+                            <strong>Sunday Service :</strong> <span id="next-sunday-date"></span> at 05:00 PM
+                        </p>
+                        <p style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; margin-bottom: 15px; background-color: #f9f9f9;">
+                            <strong>Hour of Prayer :</strong> <span id="next-wednesday-date"></span> at 08:00 PM
+                        </p>
+                        <p style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; margin-bottom: 0; background-color: #f9f9f9;">
+                            <strong>Sunday School :</strong> <span id="next-friday-date"></span> at 00:00 AM
+                        </p>
+                    </div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const options = { day: '2-digit', month: 'long', year: 'numeric' };
 
-                    // Get elements for displaying the countdown
-                    const daysElement = document.getElementById('countdown-days');
-                    const hoursElement = document.getElementById('countdown-hours');
-                    const minutesElement = document.getElementById('countdown-minutes');
-                    const secondsElement = document.getElementById('countdown-seconds');
+                            function getNextDate(dayOfWeek, currentHour, currentMinute) {
+                                const now = new Date();
+                                
+                                const todayDay = now.getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
+                                
+                                let daysUntilNext = dayOfWeek - todayDay;
+                                
+                                if (daysUntilNext === 0) {
+                                    // Check if current time has passed the service time for the same day
+                                    // Using current time (10:01:42 PM EDT on Friday, June 27, 2025)
+                                    // Sunday Service (0, 17, 0) - if today is Sunday and it's past 5 PM, get next Sunday
+                                    // Wednesday Prayer (3, 20, 0) - if today is Wednesday and it's past 8 PM, get next Wednesday
+                                    // Friday School (5, 0, 0) - if today is Friday and it's past 12 AM, get next Friday
+                                    if (now.getHours() > currentHour || (now.getHours() === currentHour && now.getMinutes() >= currentMinute)) {
+                                        daysUntilNext += 7; // Go to next week
+                                    }
+                                } else if (daysUntilNext < 0) {
+                                    daysUntilNext += 7; // Wrap around to next week
+                                }
 
-                    function updateCountdown() {
-                        const now = new Date().getTime();
-                        const distance = countdownDate.getTime() - now;
+                                const nextDate = new Date(now);
+                                nextDate.setDate(now.getDate() + daysUntilNext);
+                                return nextDate.toLocaleDateString('en-US', options).toUpperCase();
+                            }
 
-                        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                            document.getElementById('next-sunday-date').textContent = getNextDate(0, 17, 0); // Sunday (0), 5:00 PM (17:00)
+                            document.getElementById('next-wednesday-date').textContent = getNextDate(3, 20, 0); // Wednesday (3), 8:00 PM (20:00)
+                            document.getElementById('next-friday-date').textContent = getNextDate(5, 0, 0); // Friday (5), 12:00 AM (00:00)
+                        });
+                    </script>
+                </div>
+            </div>
 
-                        if (distance < 0) {
-                            clearInterval(countdownInterval);
-                            const container = document.querySelector('.countdown-container');
-                            container.innerHTML = '<p style="font-size: 2em; color: #2c3e50; text-align: center; width: 100%;">The event has started!</p>';
-                            container.style.boxShadow = 'none';
-                            container.style.backgroundColor = 'transparent';
-                        } else {
-                            daysElement.innerHTML = String(days).padStart(2, '0');
-                            hoursElement.innerHTML = String(hours).padStart(2, '0');
-                            minutesElement.innerHTML = String(minutes).padStart(2, '0');
-                            secondsElement.innerHTML = String(seconds).padStart(2, '0');
-                        }
-                    }
-
-                    const countdownInterval = setInterval(updateCountdown, 1000);
-                    updateCountdown();
-                });
-            </script>
         </div>
     </section>
+</div>
 
     <section style="background-color: #C5C6C7; padding: 40px 20px;">
         <div class="container">
