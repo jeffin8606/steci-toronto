@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>STECI Church</title>
-  
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <!-- Google Font: Careera Script -->
   <link href="https://fonts.googleapis.com/css2?family=Careera+Script&display=swap" rel="stylesheet">
-  
+
   <style>
-    body, html {
+    body,
+    html {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -32,19 +34,22 @@
     }
 
     .carousel-item::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
-  z-index: 1;
-}
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
+      z-index: 1;
+    }
 
 
     /* Overlay content sits on top of carousel */
     .overlay-content {
       position: absolute;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       z-index: 2;
     }
@@ -55,12 +60,12 @@
       margin-bottom: -50px;
     }
 
- 
+
     .navbar {
       background-color: #024950;
       margin: 10px 90px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .nav-link {
@@ -78,10 +83,10 @@
     }
 
     .navbar-nav {
-  margin: 0 auto;
-  display: flex;
-  gap: 30px;
-}
+      margin: 0 auto;
+      display: flex;
+      gap: 30px;
+    }
 
     .bible-verse {
       position: absolute;
@@ -129,65 +134,67 @@
         margin: 10px 10px;
       }
     }
-.service-box {
-  background-color: white;
-  padding: 20px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  height: 180px;
-  position: relative;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
 
-.service-box h4 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-}
+    .service-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      height: 180px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-.service-time {
-  font-size: 1rem;
-  color: #024950;
-  margin-bottom: 10px;
-}
+    .service-box h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+    }
 
-.service-details {
-  opacity: 0;
-  max-height: 0;
-  transition: opacity 0.4s ease, max-height 0.4s ease;
-  font-size: 0.95rem;
-  color: #333;
-  margin-top: 10px;
-}
+    .service-time {
+      font-size: 1rem;
+      color: #024950;
+      margin-bottom: 10px;
+    }
 
-.service-box:hover {
-  height: 260px;
-}
+    .service-details {
+      opacity: 0;
+      max-height: 0;
+      transition: opacity 0.4s ease, max-height 0.4s ease;
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 10px;
+    }
 
-.service-box:hover .service-details {
-  opacity: 1;
-  max-height: 100px;
-}
+    .service-box:hover {
+      height: 260px;
+    }
 
-.service-img-icon {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-html {
-  scroll-behavior: smooth;
-}
+    .service-box:hover .service-details {
+      opacity: 1;
+      max-height: 100px;
+    }
 
+    .service-img-icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
+
 <body>
 
   <!-- Background Carousel First -->
   <div id="churchCarousel" class="carousel slide" data-bs-ride="carousel">
     <!-- Indicators -->
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#churchCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#churchCarousel" data-bs-slide-to="0" class="active"
+        aria-current="true"></button>
       <button type="button" data-bs-target="#churchCarousel" data-bs-slide-to="1"></button>
       <button type="button" data-bs-target="#churchCarousel" data-bs-slide-to="2"></button>
       <button type="button" data-bs-target="#churchCarousel" data-bs-slide-to="3"></button>
@@ -206,9 +213,9 @@ html {
   <div class="overlay-content">
     <!-- Logo -->
     <div class="logo-header d-flex justify-content-center align-items-center flex-wrap">
-  <img src="images/steci logo.png" alt="Church Logo" class="me-3" style="height: 200px;">
-  <img src="images/steci text.png" alt="Church Name" style="height: 300px;">
-</div>
+      <img src="images/steci logo.png" alt="Church Logo" class="me-3" style="height: 200px;">
+      <img src="images/steci text.png" alt="Church Name" style="height: 300px;">
+    </div>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md">
@@ -230,7 +237,8 @@ html {
 
     <!-- Bible Verse -->
     <div class="bible-verse">
-      <p>"But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth" <br>— Acts 1:8</p>
+      <p>"But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both
+        in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth" <br>— Acts 1:8</p>
     </div>
   </div>
 
@@ -243,8 +251,8 @@ html {
       pause: 'hover'
     });
   </script>
-<!-- Our Services Section -->
-<section style="
+  <!-- Our Services Section -->
+  <section style="
   background-image: url('images/bgwhite.jpg');
   background-size: cover;
   background-position: center;
@@ -252,138 +260,153 @@ html {
   color:black;
   text-align: center;
 ">
-   <div class="container">
+    <div class="container">
 
-    <!-- Our Services -->
-    <!-- Services Section -->
-<section style="background-color: #AFFDDE5; padding: 60px 0;">
-  <div class="container text-center">
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px;">Our Services</h2>
-    
-    <div class="row justify-content-center">
-      
-      <!-- Sunday Service -->
-      <div class="col-sm-6 col-md-4 m-3 service-box">
-<img src="images/sunday.png" alt="Sunday Service Icon" class="service-img-icon">
-        <h4>Sunday Service</h4>
-        <p class="service-time">Every Sunday 5:00 PM</p>
-        <div class="service-details">
-          Join us every Sunday for our hybrid service—come in person or connect with us on Zoom for worship and fellowship.
+      <!-- Our Services -->
+      <!-- Services Section -->
+      <section style="background-color: #AFFDDE5; padding: 60px 0;">
+        <div class="container text-center">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px;">Our Services</h2>
+
+          <div class="row justify-content-center">
+
+            <!-- Sunday Service -->
+            <div class="col-sm-6 col-md-4 m-3 service-box">
+              <img src="images/sunday.png" alt="Sunday Service Icon" class="service-img-icon">
+              <h4>Sunday Service</h4>
+              <p class="service-time">Every Sunday 5:00 PM</p>
+              <div class="service-details">
+                Join us every Sunday for our hybrid service—come in person or connect with us on Zoom for worship and
+                fellowship.
+              </div>
+            </div>
+
+            <!-- Hour of Prayer -->
+            <div class="col-sm-6 col-md-4 m-3 service-box">
+              <img src="images/prayer.png" alt="Sunday Service Icon" class="service-img-icon">
+              <h4>Hour of Prayer</h4>
+              <p class="service-time">Every Wednesday 08:00 PM</p>
+              <div class="service-details">
+                A peaceful time to study the Bible and pray together for our needs and the world.
+              </div>
+            </div>
+
+            <!-- Sunday School -->
+            <div class="col-sm-6 col-md-4 m-3 service-box">
+              <img src="images/school.png" alt="Sunday Service Icon" class="service-img-icon">
+              <h4>Sunday School</h4>
+              <p class="service-time">Every Friday 00:00 AM</p>
+              <div class="service-details">
+                Fun and faith-filled Zoom sessions to help children learn and grow in God’s love
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Hour of Prayer -->
-      <div class="col-sm-6 col-md-4 m-3 service-box">
-<img src="images/prayer.png" alt="Sunday Service Icon" class="service-img-icon">
-        <h4>Hour of Prayer</h4>
-        <p class="service-time">Every Wednesday 08:00 PM</p>
-        <div class="service-details">
-          A peaceful time to study the Bible and pray together for our needs and the world.
+
+      <!-- Our Leaders -->
+      <h2 class="mb-5" style="font-weight: bold;">Our Leaders</h2>
+      <div class="row justify-content-center">
+
+        <!-- Leader 1 -->
+        <div class="col-md-4 mb-4">
+          <img src="images/BTA.jpg" alt="Bishop Thomas Abraham"
+            style="width: 180px; height: 180px; object-fit: cover; object-position: center 30%; border-radius: 50%; border: 4px solid #024950;">
+          <h5 class="mt-3 mb-1">Bishop Most Rev. Dr. Thomas Abraham</h5>
+          <p>Presiding Bishop</p>
         </div>
-      </div>
 
-      <!-- Sunday School -->
-      <div class="col-sm-6 col-md-4 m-3 service-box">
-<img src="images/school.png" alt="Sunday Service Icon" class="service-img-icon">
-        <h4>Sunday School</h4>
-        <p class="service-time">Every Friday 00:00 AM</p>
-        <div class="service-details">
-          Fun and faith-filled Zoom sessions to help children learn and grow in God’s love
+        <!-- Leader 2 -->
+        <div class="col-md-4 mb-4">
+          <img src="images/BAC.jpg" alt="Bishop Abraham Chacko"
+            style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 4px solid #024950;">
+          <h5 class="mt-3 mb-1">Bishop Rt. Rev. Dr. Abraham Chacko</h5>
+          <p>Prathinidhi Sabha Adhyakshan<br>Diocese Bishop</p>
         </div>
-      </div>
 
-    </div>
-  </div>
-</section>
-
-
-    <!-- Our Leaders -->
-    <h2 class="mb-5" style="font-weight: bold;">Our Leaders</h2>
-    <div class="row justify-content-center">
-      
-      <!-- Leader 1 -->
-      <div class="col-md-4 mb-4">
-        <img src="images/BTA.jpg" alt="Bishop Thomas Abraham" style="width: 180px; height: 180px; object-fit: cover; object-position: center 30%; border-radius: 50%; border: 4px solid #024950;">
-        <h5 class="mt-3 mb-1">Bishop Most Rev. Dr. Thomas Abraham</h5>
-        <p>Presiding Bishop</p>
-      </div>
-
-      <!-- Leader 2 -->
-      <div class="col-md-4 mb-4">
-        <img src="images/BAC.jpg" alt="Bishop Abraham Chacko" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 4px solid #024950;">
-        <h5 class="mt-3 mb-1">Bishop Rt. Rev. Dr. Abraham Chacko</h5>
-        <p>Prathinidhi Sabha Adhyakshan<br>Diocese Bishop</p>
-      </div>
-
-      <!-- Leader 3 -->
-      <div class="col-md-4 mb-4">
-        <img src="images/RDV.png" alt="Rev. David Varghese" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 4px solid #024950;">
-        <h5 class="mt-3 mb-1">Rev. David P Varghese</h5>
-        <p>Vicar</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Contact & Location Section -->
-<section style="background-color: #C5C6C7; padding: 40px 20px;">
-  <div class="container">
-    <div class="row text-center text-md-start align-items-center">
-      
-      <!-- Contact Info -->
-      <div class="col-md-4 mb-4 mb-md-0">
-        <h5 style="font-weight: bold;">Contact Us</h5>
-        <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-2">
-          <img src="images/phone.png" alt="Phone" style="height: 20px; margin-right: 10px;">
-          <span>+1 (000) 000-0000</span>
+        <!-- Leader 3 -->
+        <div class="col-md-4 mb-4">
+          <img src="images/RDV.png" alt="Rev. David Varghese"
+            style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 4px solid #024950;">
+          <h5 class="mt-3 mb-1">Rev. David P Varghese</h5>
+          <p>Vicar</p>
         </div>
-        <div class="d-flex align-items-center justify-content-center justify-content-md-start">
-          <img src="images/mail.png" alt="Email" style="height: 20px; margin-right: 10px;">
-          <span>torontosteci@gmail.com</span>
-        </div>
-      </div>
 
-      <!-- Church Address -->
-      <div class="col-md-4 mb-4 mb-md-0">
-        <h5 style="font-weight: bold;">Location</h5>
-        <p style="font-size: 1.1rem; margin: 0;">
-          5800 Sheppard Ave E,<br>
-          Scarborough, Ontario<br>
-          ON M1B 5J7
-        </p>
-      </div>
-
-      <!-- Google Map -->
-      <div class="col-md-4">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.2735931708494!2d-79.20095568418068!3d43.794604479116885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34b2ebc91b7d%3A0x996aeb8e30c510c1!2s5800%20Sheppard%20Ave%20E%2C%20Scarborough%2C%20ON%20M1B%205J7!5e0!3m2!1sen!2sca!4v1719423591561" 
-          width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
       </div>
     </div>
-  </div>
-</section>
+<!-- Upcoming Events -->
+      <h2 class="mb-5" style="font-weight: bold;">Upcoming Events</h2>
+      <div class="row justify-content-center">
+
+    <script src="/scripts//countdown.js"></script>
+    <a href="https://logwork.com/countdown-dha5" class="countdown-timer" data-timezone="America/Toronto"
+      data-date="2025-09-04 16:00">Retreat 2025</a>
+  </section>
+
+  <!-- Contact & Location Section -->
+  <section style="background-color: #C5C6C7; padding: 40px 20px;">
+    <div class="container">
+      <div class="row text-center text-md-start align-items-center">
+
+        <!-- Contact Info -->
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 style="font-weight: bold;">Contact Us</h5>
+          <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-2">
+            <img src="images/phone.png" alt="Phone" style="height: 20px; margin-right: 10px;">
+            <span>+1 (000) 000-0000</span>
+          </div>
+          <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+            <img src="images/mail.png" alt="Email" style="height: 20px; margin-right: 10px;">
+            <span>torontosteci@gmail.com</span>
+          </div>
+        </div>
+
+        <!-- Church Address -->
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 style="font-weight: bold;">Location</h5>
+          <p style="font-size: 1.1rem; margin: 0;">
+            5800 Sheppard Ave E,<br>
+            Scarborough, Ontario<br>
+            ON M1B 5J7
+          </p>
+        </div>
+
+        <!-- Google Map -->
+        <div class="col-md-4">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.2735931708494!2d-79.20095568418068!3d43.794604479116885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34b2ebc91b7d%3A0x996aeb8e30c510c1!2s5800%20Sheppard%20Ave%20E%2C%20Scarborough%2C%20ON%20M1B%205J7!5e0!3m2!1sen!2sca!4v1719423591561"
+            width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-<!-- Footer with Social Icons -->
-<footer style="background-color: #024950; padding: 20px 0;">
-  <div class="container text-center">
-    <a href="https://www.instagram.com/steci_toronto/" target="_blank" rel="noopener noreferrer" style="margin: 0 10px;">
-  <img src="images/insta.png" alt="Instagram" style="height: 30px;">
-</a>
+  <!-- Footer with Social Icons -->
+  <footer style="background-color: #024950; padding: 20px 0;">
+    <div class="container text-center">
+      <a href="https://www.instagram.com/steci_toronto/" target="_blank" rel="noopener noreferrer"
+        style="margin: 0 10px;">
+        <img src="images/insta.png" alt="Instagram" style="height: 30px;">
+      </a>
 
-<a href="https://www.facebook.com/stecitoronto/" target="_blank" rel="noopener noreferrer" style="margin: 0 10px;">
-  <img src="images/fb.png" alt="Facebook" style="height: 30px;">
-</a>
+      <a href="https://www.facebook.com/stecitoronto/" target="_blank" rel="noopener noreferrer"
+        style="margin: 0 10px;">
+        <img src="images/fb.png" alt="Facebook" style="height: 30px;">
+      </a>
 
-<a href="https://www.youtube.com/@stecitorontoparish" target="_blank" rel="noopener noreferrer" style="margin: 0 10px;">
-  <img src="images/YT.png" alt="YouTube" style="height: 30px;">
-</a>
+      <a href="https://www.youtube.com/@stecitorontoparish" target="_blank" rel="noopener noreferrer"
+        style="margin: 0 10px;">
+        <img src="images/YT.png" alt="YouTube" style="height: 30px;">
+      </a>
 
-  </div>
-</footer>
+    </div>
+  </footer>
 
 </body>
+
 </html>
