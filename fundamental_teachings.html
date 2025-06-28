@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamental Teachings - STECI Church</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Careera+Script&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif; /* A more readable font for body text */
+            color: #333; /* Default text color for content */
+            line-height: 1.6;
+        }
+
+        /* Styles directly for the header (logo and navbar) */
+        .top-header-area {
+            width: 100%;
+            background-color: rgba(2, 73, 80, 0.9);
+            padding-bottom: 10px;
+        }
+
+        .logo-header {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: -40px;
+            position: relative;
+        }
+
+        .navbar {
+            background-color: #affdde;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 4;
+            width: fit-content;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: black !important;
+            padding: 10px 25px;
+            margin: 0 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(2, 73, 80, 0.9);
+            color: white !important;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Styles for dropdown menu */
+        .dropdown-menu {
+            background-color: #affdde;
+            border-radius: 8px;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .dropdown-item {
+            color: black !important;
+            padding: 10px 25px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(2, 73, 80, 0.9);
+            color: white !important;
+        }
+
+        .dropdown-item:active {
+            background-color: #affdde;
+            color: #000 !important;
+        }
+
+        /* CUSTOM CSS FOR HOVER DROPDOWN AND NO CARET */
+        .navbar-nav .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-nav .dropdown-toggle::after {
+            display: none;
+        }
+        /* END CUSTOM CSS */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Media queries for header/navbar responsiveness */
+        @media (max-width: 768px) {
+            .top-header-area {
+                padding-bottom: 10px;
+            }
+
+            .logo-header {
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            padding: 60px 20px;
+            background-color: #f8f9fa; /* Light background for content */
+            max-width: 900px; /* Constrain width for readability */
+            margin: 0 auto; /* Center the content block */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            border-radius: 8px;
+            margin-top: 20px; /* Space from header */
+            margin-bottom: 20px; /* Space from footer */
+        }
+
+        .main-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #024950; /* Church theme color */
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .main-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #024950;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .main-content p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        .main-content ul {
+            list-style-type: disc;
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .main-content ul li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .scripture-verse {
+            font-style: italic;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+            color: #024950;
+            font-weight: 500;
+        }
+
+        .attribution {
+            font-size: 0.9rem;
+            text-align: right;
+            color: #777;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* Ensure footer content is always below main content */
+        .footer-section-contact {
+            background-color: #C5C6C7;
+            padding: 40px 20px;
+            margin-top: auto; /* Pushes footer to the bottom */
+        }
+
+        .footer-socials {
+            background-color: #024950;
+            padding: 20px 0;
+        }
+
+        /* Adjustments for smaller screens on main content */
+        @media (max-width: 576px) {
+            .main-content {
+                padding: 30px 15px;
+            }
+
+            .main-content h2 {
+                font-size: 2rem;
+            }
+
+            .main-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .main-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-header-area">
+        <div class="logo-header d-flex justify-content-center align-items-center flex-wrap">
+            <img src="images/steci logo.png" alt="Church Logo" class="me-3" style="height: 200px;">
+            <img src="images/steci text.png" alt="Church Name" style="height: 300px;">
+        </div>
+
+        <nav class="navbar navbar-expand-md">
+            <div class="container justify-content-center">
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAbout" role="button"
+                                aria-expanded="false">
+                                ABOUT US
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
+                                <li><a class="dropdown-item" href="steci_toronto.html">STECI TORONTO</a></li>
+                                <li><a class="dropdown-item" href="board_of_directors.html">BOARD OF DIRECTORS</a></li>
+                                <li><a class="dropdown-item" href="parent_church.html">PARENT CHURCH</a></li>
+                                <li><a class="dropdown-item" href="fundamental_teachings.html">FUNDAMENTAL TEACHINGS</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="Office Bearers 2025.html">OFFICE BEARERS 2025</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#events">EVENTS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <h2>Our Fundamental Teachings</h2>
+
+        <h3>Principal Aim and Objective</h3>
+        <p>Our Church affirms that the purpose and work of the Church is the stewardship of the divine doctrines and teachings, as revealed through Jesus Christ and proclaimed by the Holy Apostles, and the preservation of these in their pristine purity, and the enrichment of the spiritual life of the members of the Church.</p>
+
+        <h3>The Uniqueness of the Bible</h3>
+        <p>Our Church believes that the Holy Bible consisting of 66 books – 39 in the Old Testament and 27 in the New Testament – is the sole authority for all matters concerning our faith and that nobody has any authority to add to, or subtract from, the contents of the Bible. In other words, all questions regarding our faith and conduct have to be judged strictly in accordance with the word of God. We subscribe to the Nicene Creed because it is in conformity with the word of God. The uniqueness of an evangelical is that he/she will always stand within the four squares of the 66 books contained in the Bible. This is all the more reason why we should study the Bible very carefully.</p>
+
+        <h3>Missionary Commitment</h3>
+        <p>While almost all the churches believe in missionary work in one form or the other, our Church believes that evangelization (i.e., preaching, discipling, and Church planting) is the main task of the Church. Each one belonging to the Church, irrespective of his/her age or position in life, has to proclaim “the good news” and live as His witness. The task of proclaiming “the good news” should not be left to be accomplished only by a few full-time evangelists. Each one of us is duty bound to supplement the efforts being made by full-time gospel workers.</p>
+
+        <h3>Salvation by Grace through Faith Alone</h3>
+        <p>Our Church believes that salvation can be obtained only by grace through faith and not through rituals and good work. When a person confesses his/her sins and believes that Jesus died for his/her sins and that God has raised Jesus from the dead for the salvation of mankind, he/she will be saved. This is not by any work but by faith. Salvation that is offered to the believer is to be preserved by continuously abiding in the Lord with “fear and trembling”.</p>
+
+        <h3>Royal Priesthood</h3>
+        <p>While almost all the churches believe in missionary work in one form or the other, our Church believes that evangelization (i.e., preaching, discipling, and Church planting) is the main task of the Church. Each one belonging to the Church, irrespective of his/her age or position in life, has to proclaim “the good news” and live as His witness. The task of proclaiming “the good news” should not be left to be accomplished only by a few full-time evangelists. Each one of us is duty bound to supplement the efforts being made by full-time gospel workers.</p>
+
+        <h3>Christ the Only Mediator - (Why do we not pray to the saints?)</h3>
+        <p>Our Church believes that salvation can be obtained only by grace through faith and not through rituals and good work. When a person confesses his/her sins and believes that Jesus died for his/her sins and that God has raised Jesus from the dead for the salvation of mankind, he/she will be saved. This is not by any work but by faith. Salvation that is offered to the believer is to be preserved by continuously abiding in the Lord with “fear and trembling”.</p>
+
+        <h3>Prayer for the Living - (Why do we not pray for the dead?)</h3>
+        <p>Our Church believes that every human being has to decide, during his/her lifetime, whether or not to accept Christ. If anyone fails to accept Christ during his/her lifetime, the position can in no way be rectified or improved by rituals performed or prayers offered by such person’s children or others after his/her death. The Church forbids prayer for the dead and, on the other hand, encourages intercessory prayer for the living. We should pray for and try to help all people living around us that they may accept Christ during their lifetime.</p>
+
+        <h3>Sacraments</h3>
+        <p><strong>(i.) The Lord’s Supper:</strong> Our Church recognizes the Lord’s Supper and Baptism, both instituted by Christ, as the two sacraments obligatory to all Christians. We believe that the bread and wine used in the Lord’s Supper are only the signs and the symbols of the body and blood of Christ. We categorically reject the teachings that there is any mysterious or other presence of Christ in the bread and wine. The Lord’s Supper is a thanks offering instituted by the Lord Himself to be observed till His coming, for the faithful to proclaim His death, remember Him, and have communion with Him and fellowship with the other believers.</p>
+        <p><strong>(ii.) Baptism:</strong> Baptism is the sign of dying for our sins with the Lord, and of being resurrected with Him unto the newness of life, and a service of acceptance into the membership of the Church. Those who openly declare their faith in Jesus Christ should be baptized and accepted into the membership of the Church. Our Church believes that children of Christian parents (born again) are also part of the Church and this is the reason why parents are allowed to opt for baptizing their children. Baptism can be had only once and, therefore, a second baptism which disparages the duly administered first baptism is totally unacceptable. Baptized children should be brought up in the Christian faith and they should confess their faith in the Lord openly and be confirmed before completing the age of 14.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If parents desire that their children themselves should confess their faith in the Lord Jesus Christ before they are baptized, they may do so. Such parents should dedicate their children in infancy. Before such children complete the age of 14, they should openly their faith in the Lord and be baptized.</p>
+
+        <h3>Holy Trinity</h3>
+        <p>We believe in the Holy Trinity - God the Father, God the Son, and God the Holy Spirit.</p>
+
+        <h3>Second Coming of the Lord Jesus</h3>
+        <p>We believe (i) in the personal return of Lord Jesus Christ with the glory to judge both the living and the dead and (ii) in the final establishment of the kingdom of God in its fulness. We believe in the bodily resurrection of the dead - the just will rise to live, and the unjust will rise to be condemned.</p>
+
+        <p class="scripture-verse">"It is freedom that Christ has set us free. Stand firm, then, and do not let yourself be burdened again by a yoke of slavery". Galatians 5:1</p>
+
+        <p class="attribution">This material was published in 1989 for the use of the youth in the Bahya Kerala and the Bahya India Districts of the St. Thomas Evangelical Church of India, by the then Administrator Very Rev. P.T. Chandapilla.</p>
+
+    </main>
+
+
+    <section class="footer-section-contact">
+        <div class="container">
+            <div class="row text-center text-md-start align-items-center">
+
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 style="font-weight: bold;">Contact Us</h5>
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-2">
+                        <img src="images/phone.png" alt="Phone" style="height: 20px; margin-right: 10px;">
+                        <span>+1 (000) 000-0000</span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                        <img src="images/mail.png" alt="Email" style="height: 20px; margin-right: 10px;">
+                        <span>torontosteci@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 style="font-weight: bold;">Location</h5>
+                    <p style="font-size: 1.1rem; margin: 0;">
+                        5800 Sheppard Ave E,<br>
+                        Scarborough, Ontario<br>
+                        ON M1B 5J7
+                    </p>
+                </div>
+
+                <div class="col-md-4">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.2735931708494!2d-79.20095568418068!3d43.794604479116885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34b2ebc91b7d%3A0x996aeb8e30c510c1!2s5800%20Sheppard%20Ave%20E%2C%20Scarborough%2C%20ON%20M1B%205J7!5e0!3m2!1sen!2sca!4v1719423591561"
+                        width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-socials">
+        <div class="container text-center">
+            <a href="https://www.instagram.com/steci_toronto/" target="_blank" rel="noopener noreferrer"
+                style="margin: 0 10px;">
+                <img src="images/insta.png" alt="Instagram" style="height: 30px;">
+            </a>
+
+            <a href="https://www.facebook.com/stecitoronto/" target="_blank" rel="noopener noreferrer"
+                style="margin: 0 10px;">
+                <img src="images/fb.png" alt="Facebook" style="height: 30px;">
+            </a>
+
+            <a href="https://www.youtube.com/@stecitorontoparish" target="_blank" rel="noopener noreferrer"
+                style="margin: 0 10px;">
+                <img src="images/YT.png" alt="YouTube" style="height: 30px;">
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
