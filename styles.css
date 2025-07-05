@@ -107,7 +107,12 @@ body, html {
 }
 .dropdown-item:hover { background-color: var(--secondary-color); color: var(--primary-color) !important; }
 .navbar-nav .dropdown:hover .dropdown-menu { display: block; }
-.navbar-nav .dropdown-toggle::after { display: none; }
+/* On desktop, hide the dropdown arrow since we use a hover effect */
+@media (min-width: 992px) {
+    .navbar-nav .dropdown-toggle::after {
+        display: none;
+    }
+}
 
 
 /* 4. HERO CAROUSEL & OVERLAY
