@@ -44,10 +44,6 @@ body, html {
     padding: 80px 20px;
 }
 
-.bg-light-pattern {
-    background-color: #f8f9fa;
-}
-
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
@@ -96,14 +92,8 @@ body, html {
     background-color: var(--secondary-color); color: var(--primary-color) !important;
 }
 .dropdown-menu {
-    background-color: rgba(2, 73, 80, 0.8);
-    border-radius: 8px;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    /* FIX: Using padding instead of margin creates a "bridge" for the mouse */
-    padding-top: 10px;
-    margin-top: 0; /* Removing the problematic margin */
+    background-color: rgba(2, 73, 80, 0.8); border-radius: 8px; border: none;
+    box-shadow: none; padding: 0; padding-top: 10px; margin-top: 0;
 }
 .dropdown-item {
     color: var(--text-light) !important; padding: 10px 25px;
@@ -151,17 +141,11 @@ main {
 }
 
 
-/* 6. CONTENT SECTIONS
+/* 6. CONTENT SECTIONS & 7. FOOTER
 ------------------------------------------------- */
-.service-box {
-    background-color: #fff; padding: 30px; border-radius: 12px; height: 100%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 10px 25px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.service-box:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08), 0 18px 35px rgba(0,0,0,0.15);
-}
+/* ... All other styles remain unchanged ... */
+.service-box { background-color: #fff; padding: 30px; border-radius: 12px; height: 100%; box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 10px 25px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.service-box:hover { transform: translateY(-8px); box-shadow: 0 4px 8px rgba(0,0,0,0.08), 0 18px 35px rgba(0,0,0,0.15); }
 .service-icon { width: 50px; height: 50px; margin-bottom: 15px; }
 .service-box h4 { font-weight: 700; color: var(--primary-color); }
 .service-time { font-size: 1rem; color: var(--primary-color); margin-bottom: 15px; font-weight: 500; }
@@ -179,10 +163,6 @@ main {
 .countdown-item span:last-child { font-size: 0.8em; color: #555; text-transform: uppercase; }
 .weekly-events-list p { border: 1px solid #ddd; padding: 10px; border-radius: 8px; margin-bottom: 10px; background-color: #f9f9f9; }
 .weekly-events-list p:last-child { margin-bottom: 0; }
-
-
-/* 7. FOOTER
-------------------------------------------------- */
 .site-footer-main { background-color: var(--primary-color); padding: 40px 20px; color: var(--text-light); }
 .footer-title { font-weight: bold; color: var(--text-light); }
 .site-footer-main p { margin-bottom: 10px; }
@@ -198,22 +178,14 @@ main {
 /* 8. RESPONSIVE MEDIA QUERIES
 ------------------------------------------------- */
 @media (min-width: 992px) {
-    .navbar-nav .dropdown:hover .dropdown-menu {
-        display: block;
-    }
-    .navbar-nav .dropdown-toggle::after {
-        display: none;
-    }
+    .navbar-nav .dropdown:hover .dropdown-menu { display: block; }
+    .navbar-nav .dropdown-toggle::after { display: none; }
 }
 
 @media (max-width: 991.98px) {
     .navbar-collapse {
-        position: absolute;
-        top: calc(100% + 10px);
-        left: 5%; right: 5%; width: 90%;
-        z-index: 1050;
-        background-color: rgba(2, 73, 80, 0.95);
-        border-radius: 8px; padding: 10px;
+        position: absolute; top: calc(100% + 10px); left: 5%; right: 5%; width: 90%; z-index: 1050;
+        background-color: rgba(2, 73, 80, 0.95); border-radius: 8px; padding: 10px;
         border: 1px solid rgba(255,255,255,0.2);
     }
     .logo-img { height: 100px; }
@@ -221,20 +193,21 @@ main {
     .navbar { width: 100%; margin-top: 10px; }
     .navbar-nav .nav-link { padding: 12px 20px; margin: 5px 0; }
     .navbar-nav .dropdown-menu {
-        width: 100%; text-align: center;
-        margin-top: 5px; padding-top: 5px; /* Reduced padding for mobile */
+        width: 100%; text-align: center; margin-top: 5px; padding-top: 5px;
         background-color: rgba(0,0,0,0.2);
     }
     .section-title { font-size: 2.2rem; }
     .site-section { padding: 60px 20px; }
+
+    /* NEW FIX: Align hamburger button to the right */
+    .navbar-toggler {
+        margin-left: auto;
+    }
 }
 
 @media (max-width: 767.98px) {
-    .site-header { height: 60vh; min-height: 400px; }
-    .carousel-item {
-        height: 60vh; background-size: contain;
-        background-repeat: no-repeat; background-color: #012a2e;
-    }
+    .site-header { height: 60vh; min-height: 450px; }
+    .carousel-item { height: 60vh; background-size: contain; background-repeat: no-repeat; background-color: #012a2e; }
     .bible-verse { margin-bottom: 3vh; }
     .top-nav-area { padding-bottom: 20px; }
     .logo-header { padding: 0; }
