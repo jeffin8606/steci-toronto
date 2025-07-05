@@ -6,44 +6,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Office Bearers 2025 - STECI Church</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Careera+Script&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body,
         html {
             margin: 0;
             padding: 0;
+            height: 100%;
             font-family: 'Poppins', sans-serif;
+            /* A more readable font for body text */
+            color: #333;
+            /* Default text color for content */
+            line-height: 1.6;
+        }
+
+        /* Applying NAV HOME Header Styles */
+        .top-header-area {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #024950;
+            /* NAV HOME: Solid color from previous instructions */
+            z-index: 3;
+            padding-bottom: 10px;
         }
 
         .logo-header {
             text-align: center;
-            margin-top: 20px;
-            margin-bottom: -30px;
+            margin-top: 10px;
+            margin-bottom: -40px;
+            /* Space between logo and navbar */
+            z-index: 4;
+            position: relative;
         }
 
-        .navbar {
-            background-color: #024950;
-            margin: 10px 90px;
+       .navbar {
+            background-color: #affdde;
+            /* NAV HOME: Solid color */
+            margin: 0 auto;
+            /* Center the navbar within the container */
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 4;
+            width: fit-content;
         }
 
         .nav-link {
             font-weight: 500;
-            color: white !important;
+            color: black !important;
+            /* NAV HOME: Black text */
             padding: 10px 25px;
-            margin: 0 30px;
+            margin: 0 20px;
             border-radius: 8px;
             transition: background-color 0.3s;
         }
 
         .nav-link:hover {
-            background-color: #affdde;
-            color: #000 !important;
+            background-color: #024950;
+            /* NAV HOME: Darker hover background */
+            color: white !important;
+            /* NAV HOME: White hover text */
         }
 
+        .navbar-nav {
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Applying NAV HOME Dropdown Styles */
+        .dropdown-menu {
+            background-color: #024950;
+            /* NAV HOME: Darker dropdown background */
+            border-radius: 8px;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .dropdown-item {
+            color: white !important;
+            /* NAV HOME: White dropdown item text */
+            padding: 10px 25px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: #affdde;
+            /* NAV HOME: Lighter dropdown item hover background */
+            color: #000 !important;
+            /* NAV HOME: Black dropdown item hover text */
+        }
+
+        .dropdown-item:active {
+            background-color: #affdde;
+            /* NAV HOME: Active state background */
+            color: #000 !important;
+            /* NAV HOME: Active state text color */
+        }
+
+        /* CUSTOM CSS FOR HOVER DROPDOWN AND NO CARET */
+        .navbar-nav .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-nav .dropdown-toggle::after {
+            display: none;
+        }
+
+        /* END CUSTOM CSS */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Media queries for header/navbar responsiveness */
+        @media (max-width: 768px) {
+            .top-header-area {
+                padding-bottom: 10px;
+            }
+
+            .logo-header {
+                margin-bottom: 10px;
+            }
+
+            .navbar-collapse {
+                background-color: rgba(2, 73, 80, 0.8);
+                /* Add a background to the collapsed menu */
+                border-radius: 8px;
+                margin-top: 10px;
+                /* Space below toggler */
+            }
+
+            .dropdown-menu {
+                position: static;
+                /* Make dropdown items static within the collapsed menu */
+                float: none;
+                width: 100%;
+                background-color: rgba(2, 73, 80, 0.95);
+                /* Slightly darker for sub-items */
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .dropdown-item {
+                padding: 12px 30px;
+                /* Indent dropdown items */
+                color: white !important;
+                /* White text for dropdown items */
+            }
+
+            .dropdown-item:hover {
+                background-color: #affdde;
+                color: black !important;
+            }
+        }
+
+        /* Office Bearers Specific Styles */
         .about-section {
-            background-image: url('images/bgwhite.jpg');
+            background-image: url('images/background.webp');
+            /* NAV HOME: Updated background image path */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -56,6 +180,8 @@
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             margin-bottom: 30px;
+            color: #024950;
+            /* NAV HOME: Title color */
         }
 
         .about-section p {
@@ -70,9 +196,19 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
             padding: 15px;
-            background-color: #fff;
+            background-color: rgba(240, 240, 240, 0.5);
+            /* Added transparency */
             margin: 15px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
 
         .card-box img {
@@ -96,23 +232,36 @@
 
         .president-card {
             width: 300px;
+            /* Slightly larger for president */
         }
 
-        .contact-section {
-            width: 100vw;
-            margin: 0;
-            padding: 40px 0;
+        /* Footer Styles */
+        .footer-section-contact {
             background-color: #C5C6C7;
+            /* NAV HOME: Footer contact background */
+            padding: 40px 20px;
+            margin-top: auto;
+            /* Pushes footer to the bottom */
         }
 
-        footer {
+        .footer-socials {
             background-color: #024950;
+            /* NAV HOME: Footer social background */
             padding: 20px 0;
+        }
+
+        footer a {
+            margin: 0 10px;
+            display: inline-block;
         }
 
         footer img {
             height: 30px;
-            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        footer img:hover {
+            transform: scale(1.1);
         }
 
         @media (max-width: 768px) {
@@ -123,125 +272,156 @@
             .nav-link {
                 margin: 0 10px;
             }
+
+            .about-section {
+                padding: 40px 15px;
+            }
+
+            .card-box {
+                width: 90%;
+                /* Make cards take more width on small screens */
+                margin: 15px auto;
+            }
+
+            .president-card {
+                width: 95%;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div style="background-color: rgba(0, 49, 53, 0.5); padding: 20px 0;">
-        <div class="logo-header d-flex justify-content-center align-items-center flex-wrap">
-            <img src="images/steci logo.png" alt="Church Logo" class="me-3" style="height: 200px;">
-            <img src="images/steci text.png" alt="Church Name" style="height: 250px;">
+    <header>
+        <div class="top-header-area">
+            <div class="logo-header d-flex justify-content-center align-items-center flex-wrap">
+                <img src="images/steci logo.png" alt="Church Logo" class="me-3" style="height: 200px;">
+                <img src="images/steci text.png" alt="Church Name" style="height: 250px;">
+            </div>
+
+            <nav class="navbar navbar-expand-md">
+                <div class="container justify-content-center">
+                    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav text-center">
+                            <li class="nav-item"><a class="nav-link" href="home.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAbout" role="button"
+                                    aria-expanded="false">
+                                    ABOUT US
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
+                                    <li><a class="dropdown-item" href="steci_toronto.html">STECI TORONTO</a></li>
+                                    <li><a class="dropdown-item" href="board_of_directors.html">BOARD OF DIRECTORS</a></li>
+                                    <li><a class="dropdown-item" href="parent_church.html">PARENT CHURCH</a></li>
+                                    <li><a class="dropdown-item" href="fundamental_teachings.html">FUNDAMENTAL TEACHINGS</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link active" href="Office Bearers 2025.html">OFFICE BEARERS 2025</a></li>
+                            <li class="nav-item"><a class="nav-link" href="retreat_2025.html">RETREAT 2025</a></li>
+                            <li class="nav-item"><a class="nav-link" href="events.html">EVENTS</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact_us.html">CONTACT US</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
+    </header>
 
-        <nav class="navbar navbar-expand-md">
-            <div class="container justify-content-center">
-                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav text-center">
-                        <li class="nav-item"><a class="nav-link" href="Web.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="Office Bearers 2025.html">Office Bearers 2025</a></li>
-                        <li class="nav-item"><a class="nav-link" href="retreat_2025.html">Retreat 2025</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                    </ul>
+    <main>
+        <section class="about-section">
+            <div class="container">
+                <h2>Office Bearers 2025</h2>
+                <p>Meet the dedicated team of leaders elected for the year 2025 who prayerfully serve our church community.</p>
+
+                <div class="d-flex justify-content-center">
+                    <div class="card-box president-card">
+                        <img src="images/RDV.png" alt="Rev David P Varghese">
+                        <div class="name">Rev David P Varghese</div>
+                        <div class="title">President | Vicar</div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap justify-content-center">
+                    <div class="card-box">
+                        <img src="images/ajo.png" alt="Ajo Abraham Jacob">
+                        <div class="name">Ajo Abraham Jacob</div>
+                        <div class="title">Vice President</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/saiju.png" alt="Saiju Alex George" style="object-position: top;">
+                        <div class="name">Saiju Alex George</div>
+                        <div class="title">Secretary</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/kendrick.png" alt="Kendrick Mathew">
+                        <div class="name">Kendrick Mathew</div>
+                        <div class="title">Joint Secretary</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/seban.png" alt="Seban Babu">
+                        <div class="name">Seban Babu</div>
+                        <div class="title">Trustee | Diocese Assembly Ex-Officio</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/siju.png" alt="Siju Abraham">
+                        <div class="name">Siju Abraham</div>
+                        <div class="title">Accountant</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/jeffin.png" alt="Jeffin John">
+                        <div class="name">Jeffin John</div>
+                        <div class="title">Lay Leader</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/soosa.png" alt="Soosa George">
+                        <div class="name">Soosa George</div>
+                        <div class="title">Sunday School Representative</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/abin.png" alt="Abin T Sunil">
+                        <div class="name">Abin T Sunil</div>
+                        <div class="title">Youth Representative</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/amy.png" alt="Amy Alexander">
+                        <div class="name">Amy Alexander</div>
+                        <div class="title">Sevin Representative</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/nibin.png" alt="Nibin James">
+                        <div class="name">Nibin James</div>
+                        <div class="title">Canada East Representative</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/alinta.png" alt="Alinta Maria">
+                        <div class="name">Alinta Maria</div>
+                        <div class="title">Canada West Representative</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/daiju.png" alt="Daiju Alex">
+                        <div class="name">Daiju Alex</div>
+                        <div class="title">Prathinidhi Sabha Ex-Officio</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/mathew.png" alt="Mathew Denny">
+                        <div class="name">Mathew Denny</div>
+                        <div class="title">Committee Member</div>
+                    </div>
+                    <div class="card-box">
+                        <img src="images/joel.png" alt="Joel Wycliffe">
+                        <div class="name">Joel Wycliffe</div>
+                        <div class="title">Committee Member</div>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </div>
+        </section>
+    </main>
 
-    <section class="about-section">
-        <div class="container">
-            <h2>Office Bearers 2025</h2>
-            <p>Meet the dedicated team of leaders elected for the year 2025 who prayerfully serve our church community.</p>
-
-            <div class="d-flex justify-content-center">
-                <div class="card-box president-card">
-                    <img src="images/RDV.png" alt="Rev David P Varghese">
-                    <div class="name">Rev David P Varghese</div>
-                    <div class="title">President | Vicar</div>
-                </div>
-            </div>
-
-            <div class="d-flex flex-wrap justify-content-center">
-                <div class="card-box">
-                    <img src="images/ajo.png" alt="Ajo Abraham Jacob">
-                    <div class="name">Ajo Abraham Jacob</div>
-                    <div class="title">Vice President</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/saiju.png" alt="Saiju Alex George" style="object-position: top;">
-                    <div class="name">Saiju Alex George</div>
-                    <div class="title">Secretary</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/kendrick.png" alt="Kendrick Mathew">
-                    <div class="name">Kendrick Mathew</div>
-                    <div class="title">Joint Secretary</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/seban.png" alt="Seban Babu">
-                    <div class="name">Seban Babu</div>
-                    <div class="title">Trustee | Diocese Assembly Ex-Officio</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/siju.png" alt="Siju Abraham">
-                    <div class="name">Siju Abraham</div>
-                    <div class="title">Accountant</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/jeffin.png" alt="Jeffin John">
-                    <div class="name">Jeffin John</div>
-                    <div class="title">Lay Leader</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/soosa.png" alt="Soosa George">
-                    <div class="name">Soosa George</div>
-                    <div class="title">Sunday School Representative</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/abin.png" alt="Abin T Sunil">
-                    <div class="name">Abin T Sunil</div>
-                    <div class="title">Youth Representative</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/amy.png" alt="Amy Alexander">
-                    <div class="name">Amy Alexander</div>
-                    <div class="title">Sevin Representative</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/nibin.png" alt="Nibin James">
-                    <div class="name">Nibin James</div>
-                    <div class="title">Canada East Representative</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/alinta.png" alt="Alinta Maria">
-                    <div class="name">Alinta Maria</div>
-                    <div class="title">Canada West Representative</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/daiju.png" alt="Daiju Alex">
-                    <div class="name">Daiju Alex</div>
-                    <div class="title">Prathinidhi Sabha Ex-Officio</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/mathew.png" alt="Mathew Denny">
-                    <div class="name">Mathew Denny</div>
-                    <div class="title">Committee Member</div>
-                </div>
-                <div class="card-box">
-                    <img src="images/joel.png" alt="Joel Wycliffe">
-                    <div class="name">Joel Wycliffe</div>
-                    <div class="title">Committee Member</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="background-color: #C5C6C7; padding: 40px 20px;">
+    <section class="footer-section-contact">
         <div class="container">
             <div class="row text-center text-md-start align-items-center">
 
@@ -267,18 +447,26 @@
                 </div>
 
                 <div class="col-md-4">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.2735931708494!2d-79.20095568418068!3d43.794604479116885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34b2ebc91b7d%3A0x996aeb8e30c510c1!2s5800%20Sheppard%20Ave%20E%2C%20Scarborough%2C%20ON%20M1B%205J7!5e0!3m2!1sen!2sca!4v1719423591561" width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.2735931708494!2d-79.20095568418068!3d43.794604479116885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34b2ebc91b7d%3A0x996aeb8e30c510c1!2s5800%20Sheppard%20Ave%20E%2C%20Scarborough%2C%20ON%20M1B%205J7!5e0!3m2!1sen!2sca!4v1719423591561" width="100%" height="250"
+                        style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <footer class="footer-socials">
         <div class="container text-center">
-            <a href="https://www.instagram.com/steci_toronto/" target="_blank"><img src="images/insta.png" alt="Instagram"></a>
-            <a href="https://www.facebook.com/stecitoronto/" target="_blank"><img src="images/fb.png" alt="Facebook"></a>
-            <a href="https://www.youtube.com/@stecitorontoparish" target="_blank"><img src="images/YT.png" alt="YouTube"></a>
+            <a href="https://www.instagram.com/steci_toronto/" target="_blank" rel="noopener noreferrer">
+                <img src="images/insta.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/stecitoronto/" target="_blank" rel="noopener noreferrer">
+                <img src="images/fb.png" alt="Facebook">
+            </a>
+            <a href="https://www.youtube.com/@stecitorontoparish" target="_blank" rel="noopener noreferrer">
+                <img src="images/YT.png" alt="YouTube">
+            </a>
         </div>
     </footer>
 
